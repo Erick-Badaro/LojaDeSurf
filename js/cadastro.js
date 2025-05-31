@@ -3,8 +3,8 @@ let botaoCadastro = document.getElementById("botão-cadastrar");
 botaoCadastro.addEventListener("click", () => {
 
     let nome = document.getElementById("nome").value.trim();
-    let email = document.getElementById("email").value.trim();
-    let senha = document.getElementById("senha").value;
+    let email = document.getElementById("email-cadastro").value.trim();
+    let senha = document.getElementById("senha-cadastro").value;
     let confirmarSenha = document.getElementById("confirmar-senha").value;
     let usuarios = JSON.parse(localStorage.getItem("usuarios")) || [];
 
@@ -31,7 +31,7 @@ botaoCadastro.addEventListener("click", () => {
     } else {
         let emailExiste = false;
         for (let i = 0; i < usuarios.length; i++) {
-            if (usuarios[i].email.toLowerCase().trim === email.toLowerCase().trim) {
+            if (usuarios[i].email.toLowerCase().trim() === email.toLowerCase().trim()) {
                 emailExiste = true;
                 break;
             }
@@ -63,4 +63,8 @@ botaoCadastro.addEventListener("click", () => {
 
     usuarios.push(usuario);
     localStorage.setItem("usuarios", JSON.stringify(usuarios));
+
+    alert("Cadastro realizado com sucesso!");
+    window.location.href = "login.html"; 
+
 });

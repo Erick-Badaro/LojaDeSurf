@@ -88,3 +88,10 @@ a {
 a:hover {
   text-decoration: underline;
 }
+
+.mensagem-erro {
+    color: red;
+    font-size: 0.9em;
+    display: block;
+    margin-top: 4px;
+}
