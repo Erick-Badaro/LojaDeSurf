@@ -1,3 +1,4 @@
+/* CSS - zerando css padrão e declarando variáveis */
 * {
     margin: 0;
     padding: 0;
@@ -11,6 +12,7 @@
     --amarelo: #ffc94c;
 }
 
+/* CSS - header */
 .header {
     width: 100%;
     background-color: var(--fundo);
@@ -28,6 +30,42 @@
     font-weight: bold;
 }
 
+.usuario {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.usuario ul {
+    background-color: var(--fundo);
+    list-style: none;
+    border-radius: 5px;
+    position: absolute;
+    z-index: 1000;
+    top: 50px;
+    border: 1px solid black;
+    display: none;
+    transition: 1s;
+}
+
+.usuario ul li {
+    margin: 20px;
+    cursor: pointer;
+}
+
+.usuario ul li #sair {
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+}
+
+.usuario:hover ul {
+    display: block;
+}
+
+/* CSS - banner */
 .banner {
     width: 100%;
     background-color: var(--vermelho);
@@ -38,6 +76,7 @@
     align-items: center;
 }
 
+/* CSS - conteúdo */
 .container {
     display: flex;
     flex-direction: column;
@@ -164,6 +203,7 @@
     border-radius: 5px;
 }
 
+/* CSS- rodapé */
 .footer {
     background-color: var(--fundo);
     width: 100%;

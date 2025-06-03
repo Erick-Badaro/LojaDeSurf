@@ -29,8 +29,17 @@ botaoLogin.addEventListener("click", (event) => {
   );
 
   if (usuarioEncontrado) {
+    usuarioEncontrado.isLogado = true;
+
+    usuarios = usuarios.map(usuario =>
+      usuario.email === usuarioEncontrado.email ? usuarioEncontrado : usuario
+    );
+
+    localStorage.setItem("usuarios", JSON.stringify(usuarios));
+
     alert("Login realizado com sucesso!");
     console.log(usuarioEncontrado);
+    window.location.href = "../index.html";
   } else {
     mostrarErro("erro-geral", "*E-mail ou senha inválidos");
   }

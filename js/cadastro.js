@@ -58,7 +58,8 @@ botaoCadastro.addEventListener("click", () => {
     let usuario = {
         nome: nome,
         email: email,
-        senha: senha
+        senha: senha,
+        isLogado: false
     };
 
     usuarios.push(usuario);
