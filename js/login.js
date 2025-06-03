@@ -30,6 +30,7 @@ botaoLogin.addEventListener("click", (event) => {
 
   if (usuarioEncontrado) {
     alert("Login realizado com sucesso!");
+    console.log(usuarioEncontrado);
   } else {
     mostrarErro("erro-geral", "*E-mail ou senha inválidos");
   }
