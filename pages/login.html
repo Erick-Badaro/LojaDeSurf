@@ -15,13 +15,16 @@
 
             <label for="email">E-mail:</label>
             <input type="email" id="email-login" name="email" required />
-            <span id="erro-email" class="mensagem-erro"></span> 
+            <span id="erro-email" class="mensagem-erro"></span>
 
             <label for="senha">Senha:</label>
-            <input type="password" id="senha-login" name="senha" required />
-            <span id="erro-senha" class="mensagem-erro"></span> 
+            <div class="ver-senha">
+                <input type="password" id="senha-login" name="senha" required />
+                <img src="/images/icones/olho.png" class="mudarIcone" id="olho" alt="Mostrar senha">
+            </div>
+            <span id="erro-senha" class="mensagem-erro"></span>
 
-            <span id="erro-geral" class="mensagem-erro"></span> 
+            <span id="erro-geral" class="mensagem-erro"></span>
 
             <button type="submit" class="botão-login">Entrar</button>
 

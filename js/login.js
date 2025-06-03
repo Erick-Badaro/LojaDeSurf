@@ -54,3 +54,16 @@ function limparErros() {
     }
   });
 }
+
+let olho = document.getElementById("olho");
+let senha = document.getElementById("senha-login");
+
+olho.addEventListener("click", () => {
+  if (senha.type === "password") {
+    senha.type = "text";
+    olho.src = "/images/icones/olhos-cruzados.png";
+  } else {
+    senha.type = "password";
+    olho.src = "/images/icones/olho.png";
+  }
+});
