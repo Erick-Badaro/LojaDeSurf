@@ -65,6 +65,33 @@ botaoCadastro.addEventListener("click", () => {
     localStorage.setItem("usuarios", JSON.stringify(usuarios));
 
     alert("Cadastro realizado com sucesso!");
-    window.location.href = "login.html"; 
+    window.location.href = "login.html";
 
+
+});
+
+let senhaCadastro = document.getElementById("senha-cadastro");
+let olho1 = document.getElementById("olho1");
+
+olho1.addEventListener("click", () => {
+    if (senhaCadastro.type === "password") {
+        senhaCadastro.type = "text";
+        olho1.src = "/images/icones/olhos-cruzados.png";
+    } else {
+        senhaCadastro.type = "password";
+        olho1.src = "/images/icones/olho.png";
+    }
+});
+
+let confirmarSenha = document.getElementById("confirmar-senha");
+let olho2 = document.getElementById("olho2");
+
+olho2.addEventListener("click", () => {
+    if (confirmarSenha.type === "password") {
+        confirmarSenha.type = "text";
+        olho2.src = "/images/icones/olhos-cruzados.png";
+    } else {
+        confirmarSenha.type = "password";
+        olho2.src = "/images/icones/olho.png";
+    }
 });
