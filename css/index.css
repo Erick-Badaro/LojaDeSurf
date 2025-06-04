@@ -1,235 +1,228 @@
-/* CSS - zerando css padrão e declarando variáveis */
 * {
-    margin: 0;
-    padding: 0;
+  margin: 0;
+  padding: 0;
 }
 
-/*Importei a fonte Karantina*/
-@import url('https://fonts.googleapis.com/css2?family=Karantina&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Karantina&display=swap");
 
-/*Quando clicar no link, vai dar um scroll suave*/
 html {
   scroll-behavior: smooth;
 }
 
-
 :root {
-    --vermelho: #fe5258;
-    --fundo: #faf3e0;
-    --azul-claro: #0057b8;
-    --azul-escuro: #002d68;
-    --amarelo: #ffc94c;
+  --vermelho: #fe5258;
+  --fundo: #faf3e0;
+  --azul-claro: #0057b8;
+  --azul-escuro: #002d68;
+  --amarelo: #ffc94c;
 }
 
-/* CSS - header */
+/* Header */
 .header {
-    width: 100%;
-    background-color: var(--fundo);
-    height: 80px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 150px;
+  width: 100%;
+  background-color: var(--fundo);
+  height: 80px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 150px;
+}
+
+.logo-principal {
+  height: 65px;
+  width: auto;
+  object-fit: contain;
 }
 
 .header a {
-    color: var(--azul-escuro);
-    text-decoration: none;
-    font-size: 20px;
-    font-weight: bold;
+  color: var(--azul-escuro);
+  text-decoration: none;
+  font-size: 20px;
+  font-weight: bold;
 }
 
 .usuario {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    gap: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 10px;
 }
 
 .usuario ul {
-    background-color: var(--fundo);
-    list-style: none;
-    border-radius: 5px;
-    position: absolute;
-    z-index: 1000;
-    top: 50px;
-    border: 1px solid black;
-    display: none;
-    transition: 1s;
+  background-color: var(--fundo);
+  list-style: none;
+  border-radius: 5px;
+  position: absolute;
+  z-index: 1000;
+  top: 50px;
+  border: 1px solid black;
+  display: none;
+  transition: 1s;
 }
 
 .usuario ul li {
-    margin: 20px;
-    cursor: pointer;
+  margin: 20px;
+  cursor: pointer;
 }
 
 .usuario ul li #sair {
-    border: none;
-    background-color: transparent;
-    cursor: pointer;
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
 }
 
 .usuario:hover ul {
-    display: block;
+  display: block;
 }
 
-/* CSS - banner */
+/* Banner */
 .banner {
-    width: 100%;
-    background-color: var(--vermelho);
-    color: white;
-    height: calc(100vh - 80px);
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  width: 100%;
+  background-color: var(--vermelho);
+  color: white;
+  height: calc(100vh - 80px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-/* CSS - conteúdo */
+/* Conteúdo */
 .container {
-    display: flex;
-    flex-direction: column;
-    padding: 75px 0;
-    gap: 75px;
+  display: flex;
+  flex-direction: column;
+  padding: 75px 0;
+  gap: 75px;
 }
 
 .conteudo,
 .produtos {
-    padding: 0 100px;
+  padding: 0 100px;
 }
 
 .conteudo {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 100px;
 }
 
 .conteudo > p {
-    width: 400px;
+  width: 400px;
 }
 
 .conteudo > span {
-    display: flex;
-    flex-direction: column;
-    gap: 25px;
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
 }
 
 .conteudo > span > p {
-    font-weight: bold;
+  font-weight: bold;
 }
 
+/* Marcas */
 .marcas {
-    background-color: var(--amarelo);
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-    padding: 20px 100px;
+  background-color: var(--amarelo);
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: 20px 100px;
 }
 
 .marcas > span {
-    display: flex;
-    gap: 50px;
-    flex-wrap: wrap;
-    justify-content: center;
+  display: flex;
+  gap: 50px;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 
-
 .marcas .caixa {
-    background-color: var(--azul-claro);
-    border-radius: 10px;
-    height: 210px;
-    width: 386px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  background-color: var(--azul-claro);
+  border-radius: 10px;
+  height: 210px;
+  width: 386px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .marcas .caixa img {
-    width: 376px;
-    height: 200px;
-    border-radius: 5px;
+  width: 376px;
+  height: 200px;
+  border-radius: 5px;
 }
 
+/* Produtos */
 .produtos {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-    justify-content: center;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  justify-content: center;
 }
 
 .produtos > span {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 35px;
-    justify-content: center;
-    align-items: center;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 35px;
+  justify-content: center;
+  align-items: center;
 }
 
 .produtos .card {
-    width: 300px;
-    height: 550px;
-    background-color: var(--azul-escuro);
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    border-radius: 10px;
-    gap: 90px;
-    align-items: center;
-    color: white;
+  width: 300px;
+  height: 550px;
+  background-color: var(--azul-escuro);
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  border-radius: 10px;
+  gap: 90px;
+  align-items: center;
+  color: white;
 }
 
-.produtos .card  img {
-    width: 273px;
-    height: 273px;
-    border-radius: 10px;
+.produtos .card img {
+  width: 273px;
+  height: 273px;
+  border-radius: 10px;
 }
 
 .card > span:nth-child(2) {
-    display: flex;
-    gap: 10px;
+  display: flex;
+  gap: 10px;
 }
 
 .card span:nth-child(3) {
-    display: flex;
-    gap: 10px;
+  display: flex;
+  gap: 10px;
 }
 
-.card span:nth-child(3) a {
-    padding: 10px;
-    background-color: var(--amarelo);
-    text-decoration: none;
-    color: white;
-    border-radius: 5px;
-    text-align: center;
-}
-
+.card span:nth-child(3) a,
 .card span:nth-child(3) button {
-    border: none;
-    background-color: var(--amarelo);
-    padding: 10px;
-    color: white;
-    border-radius: 5px;
+  padding: 10px;
+  background-color: var(--amarelo);
+  color: white;
+  border-radius: 5px;
+  text-align: center;
+  border: none;
+  text-decoration: none;
+  cursor: pointer;
 }
 
-/* CSS- rodapé */
-
+/* Rodapé */
 .footer {
-  background-color: var(--fundo);      
+  background-color: var(--fundo);
   width: 100%;
-  padding: 40px 20px;                  
-  color: #000;                        
-  font-size: 16px;                     
+  padding: 40px 20px;
+  color: #000;
+  font-size: 16px;
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 20px;                          
+  gap: 20px;
   box-sizing: border-box;
-  font-family: 'Karantina', cursive;
-}
-
-.footer-logo img {
-  height: 80px;                        
+  font-family: "Karantina", cursive;
 }
 
 .footer-links {
@@ -248,7 +241,7 @@ html {
 }
 
 .footer-links a:hover {
-  color: #0077b6;                     
+  color: #0077b6;
 }
 
 .footer-social {
@@ -258,7 +251,7 @@ html {
 }
 
 .footer-social a img {
-  height: 24px;                        
+  height: 24px;
   width: 24px;
   transition: transform 0.3s, filter 0.3s;
 }
@@ -271,15 +264,20 @@ html {
   text-align: center;
   font-size: 18px;
   margin-top: 20px;
-  border-top: 1px solid rgba(0,0,0,0.1);
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
   padding-top: 50px;
   width: 100%;
   box-sizing: border-box;
   font-weight: bold;
 }
 
-.footer-bottom p:hover{
-    transform: scale(1.1);
-    cursor: pointer;
-    color: #0077b6;
+.footer-bottom p:hover {
+  transform: scale(1.1);
+  cursor: pointer;
+  color: #0077b6;
+}
+
+.footer-logo img {
+  height: 100px;
+  width: auto;
 }
