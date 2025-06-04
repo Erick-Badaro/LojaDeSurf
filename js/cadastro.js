@@ -59,7 +59,8 @@ botaoCadastro.addEventListener("click", () => {
         nome: nome,
         email: email,
         senha: senha,
-        isLogado: false
+        isLogado: false,
+        carrinho: []
     };
 
     usuarios.push(usuario);

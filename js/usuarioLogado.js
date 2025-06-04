@@ -29,3 +29,11 @@ btn.addEventListener("click", () => {
     location.reload();
   }
 });
+
+let botoesComprar = document.querySelectorAll('.comprar');
+
+botoesComprar.forEach((botao, index) => {
+  botao.addEventListener('click', () => {
+    console.log(botao, index);
+  });
+});
