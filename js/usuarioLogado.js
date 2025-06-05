@@ -1,5 +1,6 @@
 let login = document.getElementById('btn');
 let usuario = document.getElementById('user');
+let dropdown = document.getElementById('dropdown')
 let usuarios = JSON.parse(localStorage.getItem("usuarios")) || [];
 let usuarioLogado = usuarios.find(usuario => usuario.isLogado === true);
 
@@ -9,9 +10,11 @@ document.addEventListener("DOMContentLoaded", () => {
     let p = document.createElement('p');
     p.textContent = 'Olá, ' + usuarioLogado.nome;
     usuario.appendChild(p);
+    dropdown.style.display = 'flex'
     usuario.style.display = 'block';
   } else {
     login.style.display = 'block';
+    dropdown.style.display = 'none'
     usuario.style.display = 'none';
   }
 });
