@@ -2,7 +2,7 @@ const produtos = [
     {
         id: 1,
         nome: 'Prancha Pyzel 1',
-        preco: 'R$ 0',
+        preco: 'R$ 10',
         imagem: '/images/pranchas/pyzel1.png',
         marca: 'marca1'
     },
@@ -154,6 +154,8 @@ function exibirProdutos(lista) {
       <img src="${produto.imagem}" alt="${produto.nome}">
       <h3>${produto.nome}</h3>
       <p>${produto.preco}</p>
+      <p>${produto.marca}</p>
+      <button class="comprar">Comprar</button>
     `;
         container.appendChild(div);
     });
@@ -182,3 +184,32 @@ checkboxes.forEach(cb => {
 
 
 exibirProdutos(produtos);
+
+let btn = document.querySelectorAll('.comprar');
+btn.forEach((botao) => {
+    botao.addEventListener('click', () => {
+        let card = botao.closest('.produto')
+        let nome = card.querySelector('h3').innerHTML
+        let valor = card.querySelectorAll('p')[0].innerHTML
+        let marca = card.querySelectorAll('p')[1].innerHTML
+        let image = '/images' + card.querySelector('img').src.split('/images')[1]
+        let valorUnico = Number(valor.replace('R$', '').replace('.', '').replace(',', '.').trim());
+
+        let prancha = {
+            nome: nome,
+            marca: marca,
+            valor: valorUnico,
+            image: image
+        }
+
+        let usuarios = JSON.parse(localStorage.getItem("usuarios")) || [];
+        let usuarioLogado = usuarios.find(usuario => usuario.isLogado === true);
+
+        usuarioLogado.carrinho.push(prancha)
+
+        usuarios = usuarios.map(usuario =>
+            usuario.email === usuarioLogado.email ? usuarioLogado : usuario
+        );
+        localStorage.setItem("usuarios", JSON.stringify(usuarios));
+    })
+})

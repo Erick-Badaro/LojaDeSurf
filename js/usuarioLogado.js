@@ -32,8 +32,25 @@ btn.addEventListener("click", () => {
 
 let botoesComprar = document.querySelectorAll('.comprar');
 
-botoesComprar.forEach((botao, index) => {
+botoesComprar.forEach((botao) => {
   botao.addEventListener('click', () => {
-    console.log(botao, index);
+     let card = botao.closest('.card')
+     let nome = card.querySelector('.nome').innerHTML
+     let marca = card.querySelector('.marca').innerHTML
+     let valor = card.querySelector('.valor').innerHTML
+     let image = '/images' + card.getElementsByTagName('img')[0].src.split('/images')[1]
+
+     let prancha = {
+      nome: nome,
+      marca: marca,
+      valor: valor,
+      image: image
+     }
+     usuarioLogado.carrinho.push(prancha)
+
+    usuarios = usuarios.map(usuario =>
+      usuario.email === usuarioLogado.email ? usuarioLogado : usuario
+    );
+    localStorage.setItem("usuarios", JSON.stringify(usuarios));
   });
 });
