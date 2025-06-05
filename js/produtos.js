@@ -154,7 +154,6 @@ function exibirProdutos(lista) {
       <img src="${produto.imagem}" alt="${produto.nome}">
       <h3>${produto.nome}</h3>
       <p>${produto.preco}</p>
-      <p>${produto.marca}</p>
       <button class="comprar">Comprar</button>
     `;
         container.appendChild(div);
