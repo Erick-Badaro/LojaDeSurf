@@ -1,6 +1,7 @@
 * {
   margin: 0;
   padding: 0;
+  font-family: "Karantina", cursive;
 }
 
 @import url("https://fonts.googleapis.com/css2?family=Karantina&display=swap");
@@ -93,7 +94,6 @@ html {
 
 .banner h1{
   font-weight: bold;
-  font-family: "Karantina", cursive;
   font-size: 50px;
   text-shadow:
     -1px -1px 0 #000,
