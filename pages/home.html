@@ -1,43 +1,93 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Surf Store</title>
-    <link rel="stylesheet" href="/css/hame.css">
+    <link rel="stylesheet" href="/css/home.css" />
+    <!-- Link dos CSS do header e footer -->
+    <link rel="stylesheet" href="header.css" />
+    <link rel="stylesheet" href="footer.css" />
 </head>
+
 <body>
 
-<header>
-    <h1>Surf Store</h1>
-    <p>A sua loja de surf com as melhores marcas do mercado</p>
-</header>
+    <!-- Header adaptado (código do header.html) -->
+    <div class="header">
+        <span>
+            <img src="/images/logos/logo.png" alt="logo" class="logo-principal" />
+            <h1>Surf Store</h1>
+        </span>
+        <span>
+            <a href="/index.html">Página inicial</a>
+            <a href="/pages/home.html">Marcas Parceiras</a>
+            <a href="/pages/produtos.html">Nossos produtos</a>
+            <a href="/pages/login.html" id="btn">Login/Cadastre-se</a>
+            <span id="dropdown">
+                <div class="usuario" id="user">
+                    <ul>
+                        <li><a href="/pages/carrinho.html">Carrinho</a></li>
+                        <li><button id="sair">Sair</button></li>
+                    </ul>
+                </div>
+                <img src="/images/icones/chevron-down.svg" alt="dropdown icon" />
+            </span>
+        </span>
+    </div>
 
-<section class="brands">
-    <div class="brand">
-        <h2>Pyzel</h2>
-        <p>Pranchas de alta performance usadas por grandes surfistas como John John Florence.</p>
-        <img src="/images/atletas/Pyzel-atleta.jpg" alt="Pyzel">
-    </div>
-    <div class="brand">
-        <h2>Al Merrick</h2>
-        <p>Qualidade, inovação e tradição no mundo do surf profissional.</p>
-        <img src="/images/atletas/Al Merick-atleta.jpg" alt="Merick">
-    </div>
-    <div class="brand">
-        <h2>Lost</h2>
-        <p>Designs modernos, ideais para surfistas progressivos e criativos.</p>
-        <img src="/images/atletas/Lost-atleta.webp" alt="Lost">
-    </div>
-    <div class="brand">
-        <h2>Shapeye</h2>
-        <p>Tecnologia brasileira com foco em performance e inovação.</p>
-        <img src="/images/atletas/Sherpeye-atleta.jpeg" alt="Sherpeye">
-    </div>
-</section>
+    <!-- Conteúdo logo abaixo do header -->
+    <section class="header-intro">
+        <h1>Surf Store</h1>
+        <p>A sua loja de surf com as melhores marcas do mercado</p>
+    </section>
 
-<footer>
-    <p>&copy; 2025 Surf Store - Todos os direitos reservados</p>
-</footer>
+    <!-- Conteúdo original do corpo da página -->
+    <section class="brands">
+        <div class="brand">
+            <h2>Pyzel</h2>
+            <p>Pranchas de alta performance usadas por grandes surfistas como John John Florence.</p>
+            <img src="/images/atletas/Pyzel-atleta.jpg" alt="Pyzel" />
+        </div>
+        <div class="brand">
+            <h2>Al Merrick</h2>
+            <p>Qualidade, inovação e tradição no mundo do surf profissional.</p>
+            <img src="/images/atletas/Al Merick-atleta.jpg" alt="Merick" />
+        </div>
+        <div class="brand">
+            <h2>Lost</h2>
+            <p>Designs modernos, ideais para surfistas progressivos e criativos.</p>
+            <img src="/images/atletas/Lost-atleta.webp" alt="Lost" />
+        </div>
+        <div class="brand">
+            <h2>Shapeye</h2>
+            <p>Tecnologia brasileira com foco em performance e inovação.</p>
+            <img src="/images/atletas/Sherpeye-atleta.jpeg" alt="Sherpeye" />
+        </div>
+    </section>
+
+    <!-- Footer adaptado (código do footer.html) -->
+    <div class="footer">
+        <div class="footer-logo">
+            <img src="/images/logos/logo.png" alt="logo" class="logo-principal" />
+        </div>
+
+        <div class="footer-links">
+            <a href="/index.html">Página inicial</a>
+            <a href="/pages/home.html">Marcas Parceiras</a>
+            <a href="/pages/produtos.html">Nossos Produtos</a>
+        </div>
+
+        <div class="footer-social">
+            <a href="#"><img src="/images/icones/instagram.svg" alt="Instagram" /></a>
+            <a href="#"><img src="/images/icones/youtube.svg" alt="YouTube" /></a>
+        </div>
+
+        <div class="footer-bottom">
+            <p>© 2025 SURF Store. Todos os direitos reservados.</p>
+        </div>
+    </div>
+    <script src="/js/usuarioLogado.js"></script>
 </body>
+
 </html>

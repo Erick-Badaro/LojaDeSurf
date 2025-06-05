@@ -55,7 +55,6 @@ document.addEventListener('DOMContentLoaded', () => {
             <span>
                 <span>
                     <p>${prancha.nome}</p>
-                    <p>${prancha.marca}</p>
                     <p>R$ ${prancha.valor}</p>
                 </span>
                 <button class="excluir" data-index="${index}">Remover do carrinho</button>
