@@ -64,9 +64,14 @@ body {
 
 .usuario {
   display: flex;
-  flex-direction: column;
+  justify-content: center;
   align-items: center;
+  flex-direction: column;
   gap: 10px;
+}
+
+.usuario p {
+  cursor: pointer;
 }
 
 .usuario ul {
@@ -75,36 +80,44 @@ body {
   border-radius: 5px;
   position: absolute;
   z-index: 1000;
-  top: 60px;
+  top: 50px;
   border: 1px solid black;
   display: none;
-}
-
-.usuario:hover ul {
-  display: block;
+  transition: 1s;
 }
 
 .usuario ul li {
-  margin: 10px;
+  margin: 20px;
+  cursor: pointer;
+  transition: 1s;
 }
 
-.usuario ul li a,
-.usuario ul li #sair {
+.usuario ul li a {
   color: black;
   text-decoration: none;
   padding: 5px;
-  transition: 0.3s;
+  transition: 0.5s;
   border-radius: 5px;
-  background: transparent;
+}
+
+.usuario ul li #sair {
   border: none;
+  background-color: transparent;
   cursor: pointer;
+  padding: 5px;
+  transition: 0.5s;
+  border-radius: 5px;
 }
 
 .usuario ul li:hover a,
 .usuario ul li:hover #sair {
-  background-color: var(--azul-escuro);
   color: white;
+  background-color: var(--azul-escuro);
 }
+
+.usuario:hover ul {
+  display: block;
+} 
 
 /* Container principal */
 .container {

@@ -41,10 +41,11 @@ botoesComprar.forEach((botao) => {
     let nome = card.querySelector('.nome').innerHTML
     let valor = card.querySelector('.valor').innerHTML
     let image = '/images' + card.getElementsByTagName('img')[0].src.split('/images')[1]
+    let valorUnico = Number(valor.replace('R$', '').replace('.', '').replace(',', '.').trim());
 
     let prancha = {
       nome: nome,
-      valor: valor,
+      valor: valorUnico,
       image: image
     }
     usuarioLogado.carrinho.push(prancha)
