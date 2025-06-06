@@ -40,7 +40,7 @@ html {
   object-fit: contain;
 }
 
-.header span:nth-child(2) > a {
+.header span:nth-child(2)>a {
   color: black;
   text-decoration: none;
   padding: 5px;
@@ -48,12 +48,12 @@ html {
   border-radius: 5px;
 }
 
-.header span:nth-child(2) > a:hover {
+.header span:nth-child(2)>a:hover {
   background-color: var(--azul-escuro);
   color: white;
 }
 
-.header span:nth-child(2) > span {
+.header span:nth-child(2)>span {
   display: flex;
   flex-direction: row;
   gap: 5px;
@@ -116,11 +116,39 @@ html {
   display: block;
 }
 
+@media screen and (max-width: 720px) {
+  .header {
+    flex-direction: column;
+    height: auto;
+    padding: 10px 0px 0px 0px;
+  }
+
+  .header span:nth-child(2) {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    height: 110px;
+    padding: 20px 0px;
+  }
+
+  .usuario ul {
+    background-color: var(--fundo);
+    list-style: none;
+    border-radius: 5px;
+    position: absolute;
+    z-index: 1000;
+    top: 185px;
+    border: 1px solid black;
+    display: none;
+    transition: 1s;
+  }
+}
+
 /* Banner */
 .banner {
   width: 100%;
   background-image: url(/images/icones/vista-hipnotizante-da-silhueta-de-um-surfista-no-oceano-durante-o-por-sol-na-indonesia.jpg);
-  background-size: cover; 
+  background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
   color: white;
@@ -131,15 +159,26 @@ html {
   opacity: 70%;
 }
 
-.banner h1{
+.banner h1 {
   font-weight: bold;
   font-size: 50px;
   text-shadow:
     -1px -1px 0 #000,
-     1px -1px 0 #000,
-    -1px  1px 0 #000,
-     1px  1px 0 #000;
-    line-height: 1.2;    
+    1px -1px 0 #000,
+    -1px 1px 0 #000,
+    1px 1px 0 #000;
+  line-height: 1.2;
+}
+
+@media screen and (max-width: 720px) {
+  .banner {
+    height: calc(100vh - 175px);
+  }
+
+  .banner h1 {
+    font-size: 25px;
+    text-align: center;
+  }
 }
 
 /* Conteúdo */
@@ -162,18 +201,29 @@ html {
   gap: 100px;
 }
 
-.conteudo > p {
+.conteudo>p {
   width: 400px;
 }
 
-.conteudo > span {
+.conteudo>span {
   display: flex;
   flex-direction: column;
   gap: 25px;
 }
 
-.conteudo > span > p {
+.conteudo>span>p {
   font-weight: bold;
+}
+
+@media screen and (max-width: 720px) {
+  .conteudo {
+    flex-direction: column;
+    gap: 50px;
+  }
+
+  .conteudo>p {
+    width: 300px;
+  }
 }
 
 /* Marcas */
@@ -185,7 +235,7 @@ html {
   padding: 20px 100px;
 }
 
-.marcas > span {
+.marcas>span {
   display: flex;
   gap: 50px;
   flex-wrap: wrap;
@@ -208,6 +258,19 @@ html {
   border-radius: 5px;
 }
 
+@media screen and (max-width: 720px) {
+  .marcas .caixa {
+    height: 110px;
+    width: 286px;
+    padding: 0 5px;
+  }
+
+  .marcas .caixa img {
+    width: 176px;
+    height: 100px;
+  }
+}
+
 /* Produtos */
 .produtos {
   display: flex;
@@ -216,7 +279,7 @@ html {
   justify-content: center;
 }
 
-.produtos > span {
+.produtos>span {
   display: flex;
   flex-wrap: wrap;
   gap: 35px;
@@ -244,7 +307,7 @@ html {
   border-radius: 10px;
 }
 
-.card > span:nth-child(2) {
+.card>span:nth-child(2) {
   display: flex;
   flex-direction: column;
   gap: 10px;
@@ -270,6 +333,29 @@ html {
 
 .card .comprar:hover {
   background-color: var(--azul-claro);
+}
+
+@media screen and (max-width: 720px) {
+  .produtos .card {
+    width: 200px;
+    min-height: 300px;
+    background-color: var(--azul-escuro);
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    border-radius: 10px;
+    gap: 20px;
+    align-items: center;
+    color: white;
+    padding: 10px 10px;
+    text-align: center;
+  }
+
+  .produtos .card img {
+    width: 173px;
+    height: 173px;
+    border-radius: 10px;
+  }
 }
 
 /* Rodapé */

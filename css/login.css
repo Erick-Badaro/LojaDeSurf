@@ -127,3 +127,9 @@ a:hover {
   border-radius: 12px;
   background-color: rgb(219, 211, 211);
 }
+
+@media screen and (max-width: 720px) {
+  #login {
+    width: 250px;
+  }
+}

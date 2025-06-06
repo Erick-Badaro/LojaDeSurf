@@ -43,7 +43,7 @@ body {
   object-fit: contain;
 }
 
-.header span:nth-child(2) > a {
+.header span:nth-child(2)>a {
   color: black;
   text-decoration: none;
   padding: 5px;
@@ -51,12 +51,12 @@ body {
   border-radius: 5px;
 }
 
-.header span:nth-child(2) > a:hover {
+.header span:nth-child(2)>a:hover {
   background-color: var(--azul-escuro);
   color: white;
 }
 
-.header span:nth-child(2) > span {
+.header span:nth-child(2)>span {
   display: flex;
   flex-direction: row;
   gap: 5px;
@@ -117,12 +117,47 @@ body {
 
 .usuario:hover ul {
   display: block;
-} 
+}
+
+@media screen and (max-width: 720px) {
+  .header {
+    flex-direction: column;
+    height: auto;
+    padding: 10px 0px 0px 0px;
+  }
+
+  .header span:nth-child(2) {
+    display: flex;
+    flex-wrap: wrap;
+    height: 150px;
+    justify-content: center;
+    align-items: center;
+    padding: 20px 0px;
+  }
+
+  .usuario ul {
+    background-color: var(--fundo);
+    list-style: none;
+    border-radius: 5px;
+    position: absolute;
+    z-index: 1000;
+    top: 200px;
+    border: 1px solid black;
+    display: none;
+    transition: 1s;
+  }
+}
 
 /* Container principal */
 .container {
   display: flex;
   min-height: 100vh;
+}
+
+@media screen and (max-width: 720px){
+  .container {
+    flex-direction: column;
+  }
 }
 
 /* Filtros */
@@ -166,6 +201,22 @@ body {
 
 .filtro-item img:hover {
   transform: scale(1.05);
+}
+
+@media screen and (max-width: 720px) {
+  .filtros {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+  .filtros .caixa {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    align-items: center;
+  }
 }
 
 /* Produtos */
