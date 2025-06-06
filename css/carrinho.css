@@ -18,7 +18,6 @@ html {
   --amarelo: #ffc94c;
 }
 
-/* Header */
 .header {
   width: 100%;
   background-color: var(--fundo);
@@ -144,7 +143,6 @@ html {
   }
 }
 
-/* CSS - rodapé */
 .footer {
   background-color: var(--fundo);
   width: 100%;
@@ -206,7 +204,6 @@ html {
 }
 
 .footer-bottom p:hover {
-  transform: scale(1.1);
   cursor: pointer;
   color: #0077b6;
 }

@@ -158,6 +158,8 @@ function exibirProdutos(lista) {
     `;
         container.appendChild(div);
     });
+
+    adicionarAoCarrinho();
 }
 
 
@@ -184,40 +186,42 @@ checkboxes.forEach(cb => {
 
 exibirProdutos(produtos);
 
-let btn = document.querySelectorAll('.comprar');
-btn.forEach((botao) => {
-    botao.addEventListener('click', () => {
-        let usuarios = JSON.parse(localStorage.getItem("usuarios")) || [];
-        let usuarioLogado = usuarios.find(usuario => usuario.isLogado === true);
-        
-        if(!usuarioLogado) {
-            if(confirm('Precisa estar logado para realizar comprar, seguir para a página de login?')) {
-                window.location.href = "login.html";
+function adicionarAoCarrinho() {
+    let btn = document.querySelectorAll('.comprar');
+    btn.forEach((botao) => {
+        botao.addEventListener('click', () => {
+            let usuarios = JSON.parse(localStorage.getItem("usuarios")) || [];
+            let usuarioLogado = usuarios.find(usuario => usuario.isLogado === true);
+
+            if (!usuarioLogado) {
+                if (confirm('Precisa estar logado para realizar comprar, seguir para a página de login?')) {
+                    window.location.href = "login.html";
+                }
+                return;
             }
-            return;
-        }
-        
-        let card = botao.closest('.produto')
-        let nome = card.querySelector('h3').innerHTML
-        let valor = card.querySelectorAll('p')[0].innerHTML
-        let image = '/images' + card.querySelector('img').src.split('/images')[1]
-        let valorUnico = Number(valor.replace('R$', '').replace('.', '').replace(',', '.').trim());
 
-        let prancha = {
-            nome: nome,
-            valor: valorUnico,
-            image: image
-        }
+            let card = botao.closest('.produto')
+            let nome = card.querySelector('h3').innerHTML
+            let valor = card.querySelectorAll('p')[0].innerHTML
+            let image = '/images' + card.querySelector('img').src.split('/images')[1]
+            let valorUnico = Number(valor.replace('R$', '').replace('.', '').replace(',', '.').trim());
+
+            let prancha = {
+                nome: nome,
+                valor: valorUnico,
+                image: image
+            }
 
 
-        usuarioLogado.carrinho.push(prancha)
+            usuarioLogado.carrinho.push(prancha)
 
-        usuarios = usuarios.map(usuario =>
-            usuario.email === usuarioLogado.email ? usuarioLogado : usuario
-        );
-        localStorage.setItem("usuarios", JSON.stringify(usuarios));
+            usuarios = usuarios.map(usuario =>
+                usuario.email === usuarioLogado.email ? usuarioLogado : usuario
+            );
+            localStorage.setItem("usuarios", JSON.stringify(usuarios));
+        })
     })
-})
+};
 
 let login = document.getElementById('btn');
 let usuario = document.getElementById('user');
@@ -226,30 +230,30 @@ let usuarios = JSON.parse(localStorage.getItem("usuarios")) || [];
 let usuarioLogado = usuarios.find(usuario => usuario.isLogado === true);
 
 document.addEventListener("DOMContentLoaded", () => {
-  if (usuarioLogado) {
-    login.style.display = 'none';
-    let p = document.createElement('p');
-    p.textContent = 'Olá, ' + usuarioLogado.nome;
-    usuario.appendChild(p);
-    dropdown.style.display = 'flex'
-    usuario.style.display = 'block';
-  } else {
-    login.style.display = 'block';
-    dropdown.style.display = 'none'
-    usuario.style.display = 'none';
-  }
+    if (usuarioLogado) {
+        login.style.display = 'none';
+        let p = document.createElement('p');
+        p.textContent = 'Olá, ' + usuarioLogado.nome;
+        usuario.appendChild(p);
+        dropdown.style.display = 'flex'
+        usuario.style.display = 'block';
+    } else {
+        login.style.display = 'block';
+        dropdown.style.display = 'none'
+        usuario.style.display = 'none';
+    }
 });
 
 let btN = document.getElementById('sair');
 btN.addEventListener("click", () => {
-  if (usuarioLogado) {
-    usuarioLogado.isLogado = false;
+    if (usuarioLogado) {
+        usuarioLogado.isLogado = false;
 
-    usuarios = usuarios.map(usuario =>
-      usuario.email === usuarioLogado.email ? usuarioLogado : usuario
-    );
+        usuarios = usuarios.map(usuario =>
+            usuario.email === usuarioLogado.email ? usuarioLogado : usuario
+        );
 
-    localStorage.setItem("usuarios", JSON.stringify(usuarios));
-    location.reload();
-  }
+        localStorage.setItem("usuarios", JSON.stringify(usuarios));
+        location.reload();
+    }
 });

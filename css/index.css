@@ -18,7 +18,6 @@ html {
   --amarelo: #ffc94c;
 }
 
-/* Header */
 .header {
   width: 100%;
   background-color: var(--fundo);
@@ -144,7 +143,6 @@ html {
   }
 }
 
-/* Banner */
 .banner {
   width: 100%;
   background-image: url(/images/icones/vista-hipnotizante-da-silhueta-de-um-surfista-no-oceano-durante-o-por-sol-na-indonesia.jpg);
@@ -181,7 +179,6 @@ html {
   }
 }
 
-/* Conteúdo */
 .container {
   display: flex;
   flex-direction: column;
@@ -226,7 +223,6 @@ html {
   }
 }
 
-/* Marcas */
 .marcas {
   background-color: var(--amarelo);
   display: flex;
@@ -271,7 +267,6 @@ html {
   }
 }
 
-/* Produtos */
 .produtos {
   display: flex;
   flex-direction: column;
@@ -358,7 +353,6 @@ html {
   }
 }
 
-/* Rodapé */
 .footer {
   background-color: var(--fundo);
   width: 100%;
@@ -420,7 +414,6 @@ html {
 }
 
 .footer-bottom p:hover {
-  transform: scale(1.1);
   cursor: pointer;
   color: #0077b6;
 }
